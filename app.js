@@ -5,25 +5,22 @@ const ejs = require("ejs");
 const port = 3000;
 const app = express();
 
-app.use('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
 app.get("/", function(req, res) {
 
   var today = new Date();
   var currentDay = today.getDay();
+  var day = "";
+  var kindOfDay;
 
   if (currentDay === 6 || currentDay === 0) {
-    res.write("Sonunda Tatil laaggn");
-    res.send();
+    day = "Weekend";
   }else {
-    res.write("Kalk nazif öss yi kaçırdın.");
-    res.write("Kalk nazif öss yi kaçırdınnnnnn.");
-    res.send();
+    day = "Weekday";
   }
-
+  res.render("list", {kinkOfDay: day});
 });
-
-
 
 
 app.listen(port, function() {
