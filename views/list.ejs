@@ -6,12 +6,18 @@
   </head>
   <body>
 
-     <% if(kindOfDay === "Tuesday") { %>
-      <h1 style="color: purple"><%= kindOfDay %> ToDo List</h1>
-    <% } else { %>
-      <h1 style="color: blue"><%= kindOfDay %> ToDo List</h1>
-    <% } %>
+    <h1> <%= kindOfDay %> </h1>
 
+    <ul>
+      <li>Buy Food</li>
+      <li>Cook Food</li>
+      <li>Eat Food</li>
+    </ul>
+
+    <form action="/" method="post" class="add-todo">
+      <input type="text" name="newItem" placeholder="What is your ToDo">
+      <button type="submit">Add a ToDo</button>
+    </form>
 
   </body>
 </html>
