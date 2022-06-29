@@ -5,6 +5,8 @@ const ejs = require("ejs");
 const port = 3000;
 const app = express();
 
+var items = [];
+
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('view engine', 'ejs');
@@ -20,12 +22,15 @@ app.get("/", function(req, res) {
   }
   var day = today.toLocaleDateString("en-us", options);
 
-  res.render("list", {kindOfDay: day});
+  res.render("list", {kindOfDay: day, newListItem: items});
 });
 
 app.post("/", function(req, res) {
   var item = req.body.newItem;
-  console.log(item);
+
+  items.push(item);
+
+  res.redirect("/");
 });
 
 
