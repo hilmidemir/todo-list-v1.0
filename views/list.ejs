@@ -7,21 +7,30 @@
   </head>
   <body>
 
-    <h1> <%= kindOfDay %> </h1>
+    <div class="box" id="heading">
+      <h1> <%= listTitle %> </h1>
+    </div>
 
-    <ul>
+    <div class="box">
 
         <!-- adding todos to html file -->
-        <% for(var i = 0; i < newListItem.length; i++) { %>
-        <li> <%= newListItem[i] %> </li>
+        <% for(let i = 0; i < newListItems.length; i++) { %>
+          <div class="item">
+            <input type="checkbox" name="" id="">
+            <p> <%= newListItems[i] %> </p>
+          </div>
         <% } %>
            
-    </ul>
+      <form action="/" method="post" class="add-todo">
+        <input type="text" name="newItem" placeholder="New ToDo" autocomplete="off">
+        <button type="submit" name="list" value="<%= listTitle %>">+</button>
+      </form>
 
-    <form action="/" method="post" class="add-todo">
-      <input type="text" name="newItem" placeholder="What is your ToDo">
-      <button type="submit">Add a ToDo</button>
-    </form>
+    </div>
+
+    
+
+    
 
   </body>
 </html>
