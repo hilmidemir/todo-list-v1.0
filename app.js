@@ -1,6 +1,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
+const date = require(__dirname + "/date.js");
+
+//We use the paranthesis in the app.js becouse we want the function run only working
+//console.log(date());
 
 const port = 3000;
 const app = express();
@@ -18,14 +22,8 @@ app.set('view engine', 'ejs');
 // seting up home route and rendered something
 app.get("/", function(req, res) {
 
-  var today = new Date();
-
-  var options = {
-    weekday: "long",
-    day: "numeric",
-    month: "long"
-  }
-  var day = today.toLocaleDateString("en-us", options);
+  //We use the paranthesis in the app.js becouse we want the function run only working
+  let day = date.getDay();
 
   res.render("list", {listTitle: day, newListItems: items});
 });
