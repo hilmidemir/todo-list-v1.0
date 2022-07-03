@@ -9,8 +9,8 @@ const date = require(__dirname + "/date.js");
 const port = 3000;
 const app = express();
 
-var items = ["Buy Food", "Cook Food", "Eat Food"];
-var workItems = [];
+const items = ["Buy Food", "Cook Food", "Eat Food"];
+const workItems = [];
 
 //Import Body parser assigments and express folder usages
 app.use(bodyParser.urlencoded({extended: true}));
@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 app.get("/", function(req, res) {
 
   //We use the paranthesis in the app.js becouse we want the function run only working
-  let day = date.getDay();
+  const day = date.getDate();
 
   res.render("list", {listTitle: day, newListItems: items});
 });
