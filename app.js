@@ -46,7 +46,7 @@ app.get("/work", function(req, res) {
   res.render("list", {listTitle: "Work List", newListItems: workItems})
 });
 
- app.post("/work", function() {
+app.post("/work", function() {
   let item = req.body.newItem;
   workItems.push(item);
   res.redirect("/work");
