@@ -31,6 +31,9 @@ const item3 = new Item({
 
 const defaultItems = [item1, item2, item3];
 
+
+
+
 app.get("/", function(req, res) {
   Item.find({}, function(err, foundItems) {
     if (foundItems.length === 0) {
@@ -52,11 +55,7 @@ app.get("/", function(req, res) {
 app.post("/", function(req, res){
 
   const itemName = req.body.newItem;
-  const item = new Item ({
-    name: itemName
-  });
-  item.save();
-  res.redirect("/");
+  const new 
 
 });
 
